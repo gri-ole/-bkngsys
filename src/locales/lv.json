@@ -1,0 +1,128 @@
+{
+  "common": {
+    "loading": "Ielādē...",
+    "error": "Kļūda",
+    "cancel": "Atcelt",
+    "save": "Saglabāt",
+    "delete": "Dzēst",
+    "edit": "Rediģēt",
+    "add": "Pievienot",
+    "refresh": "Atjaunot",
+    "refreshing": "Atjaunošana...",
+    "submit": "Nosūtīt",
+    "submitting": "Nosūtīšana...",
+    "logout": "Iziet",
+    "yes": "Jā",
+    "no": "Nē"
+  },
+  "booking": {
+    "title": "Tiešsaistes pieraksts",
+    "form": {
+      "clientName": "Jūsu vārds",
+      "phone": "Tālrunis",
+      "phonePlaceholder": "+371 2000 0000",
+      "service": "Pakalpojums",
+      "selectService": "Izvēlieties pakalpojumu",
+      "date": "Datums",
+      "time": "Laiks",
+      "comment": "Komentārs",
+      "commentPlaceholder": "Papildu informācija (pēc izvēles)",
+      "submit": "Nosūtīt pieteikumu"
+    },
+    "validation": {
+      "nameRequired": "Ievadiet savu vārdu",
+      "nameMinLength": "Vārdam jābūt vismaz 2 simboliem",
+      "phoneRequired": "Ievadiet tālruņa numuru",
+      "phoneInvalid": "Nepareizs tālruņa numura formāts",
+      "serviceRequired": "Izvēlieties pakalpojumu",
+      "dateRequired": "Izvēlieties datumu",
+      "dateInvalid": "Nepareizs datuma formāts",
+      "timeRequired": "Izvēlieties laiku",
+      "timeInvalid": "Nepareizs laika formāts"
+    },
+    "success": {
+      "title": "✓ Pieteikums nosūtīts!",
+      "message": "Jūsu pieraksta pieteikums veiksmīgi nosūtīts. Mēs ar jums sazināsimies tuvākajā laikā.",
+      "newBooking": "Izveidot jaunu pieteikumu"
+    },
+    "error": {
+      "submitError": "Kļūda, nosūtot pieteikumu",
+      "genericError": "Radās kļūda. Lūdzu, mēģiniet vēlreiz."
+    },
+    "services": {
+      "haircut": "Frizūra",
+      "coloring": "Krāsošana",
+      "styling": "Sakārtošana",
+      "manicure": "Manikīrs",
+      "pedicure": "Pedikīrs",
+      "massage": "Masāža",
+      "cosmetology": "Kosmetoloģija",
+      "other": "Cits"
+    }
+  },
+  "admin": {
+    "title": "Admin panelis",
+    "login": {
+      "title": "Admin panelis",
+      "password": "Parole",
+      "rememberPassword": "Atcerēties paroli",
+      "showPassword": "Rādīt paroli",
+      "hidePassword": "Paslēpt paroli",
+      "login": "Ielogoties",
+      "error": "Nepareiza parole",
+      "authError": "Kļūda autentifikācijā"
+    },
+    "records": {
+      "title": "Ierakstu pārvaldība",
+      "addRecord": "Pievienot ierakstu",
+      "editRecord": "Rediģēt ierakstu",
+      "deleteConfirm": "Vai tiešām vēlaties dzēst šo ierakstu?",
+      "noRecords": "Pašlaik ierakstu nav",
+      "loading": "Ierakstu ielāde...",
+      "form": {
+        "clientName": "Klienta vārds",
+        "phone": "Telefons",
+        "service": "Pakalpojums",
+        "selectService": "Izvēlieties pakalpojumu",
+        "date": "Datums",
+        "time": "Laiks",
+        "status": "Statuss",
+        "amount": "Summa (EUR)",
+        "amountPlaceholder": "0.00",
+        "paymentMethod": "Maksāšanas veids",
+        "comment": "Komentārs",
+        "saveChanges": "Saglabāt izmaiņas",
+        "addRecord": "Pievienot ierakstu",
+        "saving": "Saglabā..."
+      },
+      "status": {
+        "new": "Jauns",
+        "confirmed": "Apstiprināts",
+        "cancelled": "Atcelts"
+      },
+      "paymentMethod": {
+        "notSpecified": "Nav norādīts",
+        "cash": "Skaidra nauda",
+        "card": "Karte (arī tiešsaiste)"
+      },
+      "source": {
+        "client": "Klients",
+        "master": "Meistars"
+      }
+    },
+    "stats": {
+      "overview": "Finanses",
+      "totalRecords": "Kopā ieraksti",
+      "totalRevenue": "Kopējie ienākumi",
+      "byStatus": "Pēc statusa",
+      "bySource": "Pēc avota",
+      "fromClients": "No klientiem",
+      "fromMaster": "No meistara",
+      "revenueByPayment": "Ienākumi pēc maksāšanas veida",
+      "topServices": "Populārākie pakalpojumi",
+      "statusNew": "Jauni",
+      "statusConfirmed": "Apstiprināti",
+      "statusCancelled": "Atcelti"
+    }
+  }
+}

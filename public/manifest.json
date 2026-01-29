@@ -1,0 +1,11 @@
+{
+  "name": "Booking App",
+  "short_name": "Booking",
+  "description": "Приложение для управления записями мастеров услуг",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#2563eb",
+  "orientation": "portrait-primary",
+  "icons": []
+}

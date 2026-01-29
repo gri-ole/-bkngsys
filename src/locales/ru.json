@@ -1,0 +1,128 @@
+{
+  "common": {
+    "loading": "Загрузка...",
+    "error": "Ошибка",
+    "cancel": "Отменить",
+    "save": "Сохранить",
+    "delete": "Удалить",
+    "edit": "Редактировать",
+    "add": "Добавить",
+    "refresh": "Обновить",
+    "refreshing": "Обновление...",
+    "submit": "Отправить",
+    "submitting": "Отправка...",
+    "logout": "Выйти",
+    "yes": "Да",
+    "no": "Нет"
+  },
+  "booking": {
+    "title": "Онлайн запись",
+    "form": {
+      "clientName": "Ваше имя",
+      "phone": "Телефон",
+      "phonePlaceholder": "+371 2000 0000",
+      "service": "Услуга",
+      "selectService": "Выберите услугу",
+      "date": "Дата",
+      "time": "Время",
+      "comment": "Комментарий",
+      "commentPlaceholder": "Дополнительная информация (по желанию)",
+      "submit": "Отправить заявку"
+    },
+    "validation": {
+      "nameRequired": "Введите ваше имя",
+      "nameMinLength": "Имя должно содержать минимум 2 символа",
+      "phoneRequired": "Введите номер телефона",
+      "phoneInvalid": "Неверный формат номера телефона",
+      "serviceRequired": "Выберите услугу",
+      "dateRequired": "Выберите дату",
+      "dateInvalid": "Неверный формат даты",
+      "timeRequired": "Выберите время",
+      "timeInvalid": "Неверный формат времени"
+    },
+    "success": {
+      "title": "✓ Заявка отправлена!",
+      "message": "Ваша заявка на запись успешно отправлена. Мы свяжемся с вами в ближайшее время.",
+      "newBooking": "Создать новую заявку"
+    },
+    "error": {
+      "submitError": "Ошибка при отправке заявки",
+      "genericError": "Произошла ошибка. Пожалуйста, попробуйте еще раз."
+    },
+    "services": {
+      "haircut": "Стрижка",
+      "coloring": "Окрашивание",
+      "styling": "Укладка",
+      "manicure": "Маникюр",
+      "pedicure": "Педикюр",
+      "massage": "Массаж",
+      "cosmetology": "Косметология",
+      "other": "Другое"
+    }
+  },
+  "admin": {
+    "title": "Админ панель",
+    "login": {
+      "title": "Админ панель",
+      "password": "Пароль",
+      "rememberPassword": "Запомнить пароль",
+      "showPassword": "Показать пароль",
+      "hidePassword": "Скрыть пароль",
+      "login": "Войти",
+      "error": "Неверный пароль",
+      "authError": "Ошибка аутентификации"
+    },
+    "records": {
+      "title": "Управление записями",
+      "addRecord": "Добавить запись",
+      "editRecord": "Редактировать запись",
+      "deleteConfirm": "Вы действительно хотите удалить эту запись?",
+      "noRecords": "Записей пока нет",
+      "loading": "Загрузка записей...",
+      "form": {
+        "clientName": "Имя клиента",
+        "phone": "Телефон",
+        "service": "Услуга",
+        "selectService": "Выберите услугу",
+        "date": "Дата",
+        "time": "Время",
+        "status": "Статус",
+        "amount": "Сумма (EUR)",
+        "amountPlaceholder": "0.00",
+        "paymentMethod": "Способ оплаты",
+        "comment": "Комментарий",
+        "saveChanges": "Сохранить изменения",
+        "addRecord": "Добавить запись",
+        "saving": "Сохранение..."
+      },
+      "status": {
+        "new": "Новая",
+        "confirmed": "Подтверждена",
+        "cancelled": "Отменена"
+      },
+      "paymentMethod": {
+        "notSpecified": "Не указан",
+        "cash": "Наличные",
+        "card": "Карта (в т.ч. онлайн)"
+      },
+      "source": {
+        "client": "Клиент",
+        "master": "Мастер"
+      }
+    },
+    "stats": {
+      "overview": "Финансы",
+      "totalRecords": "Всего записей",
+      "totalRevenue": "Общий доход",
+      "byStatus": "По статусу",
+      "bySource": "По источнику",
+      "fromClients": "От клиентов",
+      "fromMaster": "От мастера",
+      "revenueByPayment": "Доход по способу оплаты",
+      "topServices": "Популярные услуги",
+      "statusNew": "Новые",
+      "statusConfirmed": "Подтвержденные",
+      "statusCancelled": "Отмененные"
+    }
+  }
+}
