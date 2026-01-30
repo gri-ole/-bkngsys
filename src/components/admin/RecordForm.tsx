@@ -148,7 +148,10 @@ export default function RecordForm({ record, onSubmit, onCancel, loading }: Reco
     onSubmit(formData);
   };
 
-  const today = new Date().toISOString().split('T')[0];
+  // Админ может добавлять записи задним числом: от 1 года назад до 3 месяцев вперёд
+  const minDate = new Date();
+  minDate.setFullYear(minDate.getFullYear() - 1);
+  const minDateStr = minDate.toISOString().split('T')[0];
   const maxDate = new Date();
   maxDate.setMonth(maxDate.getMonth() + 3);
   const maxDateStr = maxDate.toISOString().split('T')[0];
@@ -227,7 +230,7 @@ export default function RecordForm({ record, onSubmit, onCancel, loading }: Reco
             className="form-input"
             value={formData.date || ''}
             onChange={handleChange}
-            min={today}
+            min={minDateStr}
             max={maxDateStr}
             required
             disabled={loading}
