@@ -8,7 +8,6 @@ import { useState } from 'react';
 import { useTranslation } from '@/hooks/useTranslation';
 import ServicesManager from '@/components/admin/ServicesManager';
 import PurchaseCategoriesManager from '@/components/admin/PurchaseCategoriesManager';
-import PasswordChangeForm from '@/components/admin/PasswordChangeForm';
 import WorkingHoursSettings from '@/components/admin/WorkingHoursSettings';
 import VacationSettings from '@/components/admin/VacationSettings';
 import ContactInfoSettings from '@/components/admin/ContactInfoSettings';
@@ -16,14 +15,9 @@ import Breadcrumbs from '@/components/admin/Breadcrumbs';
 
 export default function SettingsPage() {
   const { t, language } = useTranslation();
-  const [activeTab, setActiveTab] = useState<'password' | 'hours' | 'vacation' | 'services' | 'purchaseCategories' | 'contact'>('password');
+  const [activeTab, setActiveTab] = useState<'hours' | 'vacation' | 'services' | 'purchaseCategories' | 'contact'>('contact');
 
   const tabs = [
-    {
-      id: 'password' as const,
-      label: language === 'ru' ? 'Пароль' : 'Parole',
-      icon: '🔐',
-    },
     {
       id: 'contact' as const,
       label: language === 'ru' ? 'Контакты' : 'Kontakti',
@@ -104,7 +98,6 @@ export default function SettingsPage() {
 
       {/* Содержимое вкладок */}
       <div className="card">
-        {activeTab === 'password' && <PasswordChangeForm />}
         {activeTab === 'contact' && <ContactInfoSettings />}
         {activeTab === 'hours' && <WorkingHoursSettings />}
         {activeTab === 'vacation' && <VacationSettings />}
