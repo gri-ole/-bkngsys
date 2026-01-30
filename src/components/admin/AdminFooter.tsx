@@ -15,7 +15,7 @@ export default function AdminFooter() {
     <footer className="admin-footer">
       <div className="admin-footer-content">
         <div className="admin-footer-left">
-          <span className="admin-footer-app-name">ColorLab Booking System</span>
+          <span className="admin-footer-app-name">www.colorlab.lv</span>
           <span className="admin-footer-divider">•</span>
           <span className="admin-footer-version">
             {language === 'ru' ? 'Версия' : 'Versija'} {version}
