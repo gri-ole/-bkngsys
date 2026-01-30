@@ -1,0 +1,1 @@
+# Vercel auto-deploy test - Fri Jan 30 20:07:42 CET 2026
