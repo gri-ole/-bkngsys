@@ -8,6 +8,7 @@ import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import LoginForm from '@/components/admin/LoginForm';
 import { useTranslation } from '@/hooks/useTranslation';
+import './admin.css';
 
 export default function AdminLayout({
   children,

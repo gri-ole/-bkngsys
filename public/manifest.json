@@ -1,11 +1,59 @@
 {
-  "name": "Booking App",
-  "short_name": "Booking",
-  "description": "Приложение для управления записями мастеров услуг",
-  "start_url": "/",
+  "name": "ColorLab Booking System",
+  "short_name": "ColorLab",
+  "description": "Profesionāla skaistuma salona vadības sistēma ar tiešsaistes pierakstu | Профессиональная система управления салоном красоты с онлайн записью",
+  "start_url": "/booking",
+  "scope": "/",
   "display": "standalone",
-  "background_color": "#ffffff",
+  "background_color": "#fdfbfb",
   "theme_color": "#2563eb",
-  "orientation": "portrait-primary",
-  "icons": []
+  "orientation": "any",
+  "categories": ["business", "lifestyle", "productivity"],
+  "lang": "lv",
+  "dir": "ltr",
+  "prefer_related_applications": false,
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/screenshot-mobile.png",
+      "sizes": "390x844",
+      "type": "image/png",
+      "form_factor": "narrow"
+    },
+    {
+      "src": "/screenshot-desktop.png",
+      "sizes": "1920x1080",
+      "type": "image/png",
+      "form_factor": "wide"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Jauna pieraksta izveidošana",
+      "short_name": "Jauns",
+      "description": "Izveidot jaunu pierakstu",
+      "url": "/booking",
+      "icons": [{ "src": "/icon-192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Admin panelis",
+      "short_name": "Admin",
+      "description": "Atvērt administratora paneli",
+      "url": "/admin",
+      "icons": [{ "src": "/icon-192.png", "sizes": "192x192" }]
+    }
+  ]
 }
