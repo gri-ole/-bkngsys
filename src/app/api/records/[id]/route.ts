@@ -5,9 +5,10 @@
  */
 
 import { NextRequest, NextResponse } from 'next/server';
-import { updateRecord, deleteRecord } from '@/services/GoogleSheetsService';
+import { updateRecord, deleteRecord, fetchRecords } from '@/services/GoogleSheetsService';
 import { UpdateRecordData } from '@/models/Record';
 import { isAuthenticated } from '@/utils/auth';
+import { sendSMS, getConfirmationSmsText } from '@/utils/smsService';
 
 export async function PUT(
   request: NextRequest,
@@ -40,8 +41,31 @@ export async function PUT(
       );
     }
 
+    // Текущая запись до обновления (для SMS при подтверждении)
+    const records = await fetchRecords();
+    const existingRecord = records.find((r) => r.id === id);
+
     body.id = id;
     const updatedRecord = await updateRecord(body);
+
+    // SMS клиенту при подтверждении записи админом
+    if (
+      body.status === 'confirmed' &&
+      existingRecord &&
+      existingRecord.status !== 'confirmed' &&
+      (updatedRecord.phone || existingRecord.phone)
+    ) {
+      const phone = updatedRecord.phone || existingRecord.phone;
+      const language = (process.env.SMS_LANGUAGE as 'lv' | 'ru') || 'ru';
+      const text = getConfirmationSmsText({
+        language,
+        date: updatedRecord.date || existingRecord.date,
+        time: updatedRecord.time || existingRecord.time,
+        service: updatedRecord.service || existingRecord.service,
+      });
+      await sendSMS(phone, text).catch((err) => console.error('[SMS] Confirm send error:', err));
+    }
+
     return NextResponse.json(updatedRecord);
   } catch (error) {
     console.error('Error in PUT /api/records/[id]:', error);
