@@ -1,5 +1,5 @@
 # Автоматический деплой на Vercel при push в main
-# Триггерит Vercel Deploy Hook — Vercel подтягивает последний код из main
+# Триггерит Vercel Deploy Hook. Нужен секрет: VERCEL_DEPLOY_HOOK_URL
 name: Deploy to Vercel
 
 on:
@@ -11,8 +11,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Trigger Vercel Deploy Hook
+        if: ${{ secrets.VERCEL_DEPLOY_HOOK_URL != '' }}
         run: |
-          RESPONSE=$(curl -s -w "\n%{http_code}" -X POST "https://api.vercel.com/v1/integrations/deploy/prj_CCuVSz4ZZ4zPnmYRfh8j220fVsZ2/p8koOJy6eS")
+          RESPONSE=$(curl -s -w "\n%{http_code}" -X POST "${{ secrets.VERCEL_DEPLOY_HOOK_URL }}")
           echo "$RESPONSE"
           HTTP_CODE=$(echo "$RESPONSE" | tail -n1)
           if [ "$HTTP_CODE" = "200" ]; then
@@ -21,3 +22,6 @@ jobs:
             echo "❌ Hook returned HTTP $HTTP_CODE"
             exit 1
           fi
+      - name: Skip (no hook URL)
+        if: ${{ secrets.VERCEL_DEPLOY_HOOK_URL == '' }}
+        run: echo "VERCEL_DEPLOY_HOOK_URL not set — add it in repo Secrets to enable auto-deploy"
