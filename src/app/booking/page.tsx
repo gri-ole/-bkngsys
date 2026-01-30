@@ -958,10 +958,18 @@ export default function BookingPage() {
         @media (max-width: 480px) {
           .page-title {
             font-size: 2rem;
+            margin-bottom: 16px;
           }
 
           .section-title {
             font-size: 1.8rem;
+            margin-bottom: 20px;
+          }
+
+          .title-underline {
+            width: 80px;
+            height: 3px;
+            margin-bottom: 40px;
           }
 
           .success-icon {
@@ -974,6 +982,44 @@ export default function BookingPage() {
             width: 45px;
             height: 45px;
             font-size: 20px;
+          }
+
+          .contacts-unified-box {
+            padding: 20px;
+            border-radius: 12px;
+          }
+
+          .contact-row {
+            padding: 16px 0;
+          }
+
+          .contact-row-icon {
+            width: 40px;
+            height: 40px;
+            min-width: 40px;
+            font-size: 18px;
+            border-radius: 10px;
+          }
+
+          .contact-row-label {
+            font-size: 10px;
+          }
+
+          .contact-row-value {
+            font-size: 14px;
+          }
+
+          .working-hours-compact {
+            font-size: 13px;
+            line-height: 1.6;
+          }
+
+          .booking-section {
+            padding: 40px 0;
+          }
+
+          .contacts-section {
+            padding: 40px 0 30px;
           }
 
           .form-box, .success-box {
