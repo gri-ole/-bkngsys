@@ -17,40 +17,20 @@ export async function PUT(request: NextRequest) {
   }
 
   try {
-    const body = await request.json();
-    const { currentPassword, newPassword } = body;
-
-    if (!currentPassword || !newPassword) {
-      return NextResponse.json(
-        { error: 'Current password and new password are required' },
-        { status: 400 }
-      );
-    }
-
-    if (newPassword.length < 6) {
-      return NextResponse.json(
-        { error: 'New password must be at least 6 characters' },
-        { status: 400 }
-      );
-    }
-
-    // Получаем текущий пароль из файла
-    const adminPassword = getAdminPassword();
-
-    if (!adminPassword || currentPassword !== adminPassword) {
-      return NextResponse.json(
-        { error: 'Invalid current password' },
-        { status: 401 }
-      );
-    }
-
-    // Сохраняем новый пароль в файл
-    setAdminPassword(newPassword);
-    
-    return NextResponse.json({
-      success: true,
-      message: 'Password changed successfully',
-    });
+    // В serverless окружении (Vercel) смена пароля через API не поддерживается
+    // Пользователь должен обновить переменную окружения ADMIN_PASSWORD в Vercel Dashboard
+    return NextResponse.json(
+      { 
+        error: 'Password change through API is not supported in production environment',
+        message: 'To change password, update ADMIN_PASSWORD environment variable in Vercel Dashboard:\n' +
+                '1. Go to Vercel Dashboard\n' +
+                '2. Select your project\n' +
+                '3. Settings → Environment Variables\n' +
+                '4. Edit ADMIN_PASSWORD\n' +
+                '5. Redeploy the project'
+      },
+      { status: 501 } // 501 Not Implemented
+    );
   } catch (error) {
     console.error('Error in PUT /api/auth/password:', error);
     const errorMessage = error instanceof Error ? error.message : 'Failed to change password';
