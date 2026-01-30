@@ -14,9 +14,8 @@ const nextConfig = {
     minimumCacheTTL: 60,
   },
   
-  // Экспериментальные оптимизации
+  // Экспериментальные оптимизации (optimizeCss требует critters — отключено)
   experimental: {
-    optimizeCss: true,
     optimizePackageImports: ['@/components', '@/utils', '@/hooks'],
   },
   
