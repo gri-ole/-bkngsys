@@ -14,6 +14,23 @@
   margin: 0 auto;
 }
 
+/* Страница статистики — сетка без overflow на мобильных */
+.admin-statistics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.admin-statistics-services-card {
+  grid-column: span 2;
+}
+
+.admin-statistics-services-inner {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 12px;
+}
+
 /* ========================================
    КНОПКИ И ДЕЙСТВИЯ
    ======================================== */
@@ -303,10 +320,42 @@
    ======================================== */
 
 @media (max-width: 768px) {
+  /* Запрет горизонтальной прокрутки в админке */
+  .admin-wrapper {
+    overflow-x: hidden;
+    max-width: 100vw;
+  }
+
+  /* Страница статистики — одна колонка, без обрезания */
+  .admin-statistics-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .admin-statistics-services-card {
+    grid-column: auto;
+  }
+
+  .admin-statistics-services-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-statistics .container {
+    overflow-x: hidden;
+  }
+
+  /* Панель статистики на главной — одна колонка */
+  .stats-grid {
+    grid-template-columns: 1fr !important;
+    min-width: 0;
+  }
+
   /* Обёртка админки — контейнер и карточки */
   .admin-wrapper .container {
     padding: 16px 12px;
     padding-bottom: 80px; /* место под футер */
+    min-width: 0; /* разрешает сжатие grid/flex детей */
+    max-width: 100%;
   }
 
   .admin-wrapper .card {

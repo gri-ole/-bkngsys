@@ -69,14 +69,14 @@ export default function StatisticsPage() {
   }
 
   return (
-    <div className="container" style={{ paddingTop: '24px', paddingBottom: '40px' }}>
+    <div className="container admin-statistics" style={{ paddingTop: '24px', paddingBottom: '40px' }}>
       <Breadcrumbs />
       
       <div style={{ marginBottom: '32px' }}>
         <h1 style={{ marginBottom: '8px' }}>
           {language === 'ru' ? 'Статистика' : 'Statistika'}
         </h1>
-        <p style={{ color: '#6b7280', fontSize: '14px' }}>
+        <p style={{ color: '#6b7280', fontSize: '14px', wordWrap: 'break-word' }}>
           {language === 'ru'
             ? 'Детальная статистика записей, услуг и источников клиентов'
             : 'Detalizēta ierakstu, pakalpojumu un klientu avotu statistika'
@@ -92,7 +92,7 @@ export default function StatisticsPage() {
         </div>
       )}
 
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '24px' }}>
+      <div className="admin-statistics-grid">
         {/* Статистика по статусам */}
         <div className="card">
           <h3 style={{ marginBottom: '20px', fontSize: '18px', fontWeight: '600' }}>
@@ -156,11 +156,11 @@ export default function StatisticsPage() {
 
         {/* Популярные услуги */}
         {topServices.length > 0 && (
-          <div className="card" style={{ gridColumn: 'span 2' }}>
+          <div className="card admin-statistics-services-card">
             <h3 style={{ marginBottom: '20px', fontSize: '18px', fontWeight: '600' }}>
               ⭐ {language === 'ru' ? 'Популярные услуги' : 'Populāri pakalpojumi'}
             </h3>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(250px, 1fr))', gap: '12px' }}>
+            <div className="admin-statistics-services-inner">
               {topServices.map(([service, count], index) => (
                 <div 
                   key={service} 
