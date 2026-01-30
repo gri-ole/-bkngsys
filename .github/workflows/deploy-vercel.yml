@@ -1,0 +1,23 @@
+# Автоматический деплой на Vercel при push в main
+# Триггерит Vercel Deploy Hook — Vercel подтягивает последний код из main
+name: Deploy to Vercel
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  trigger-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger Vercel Deploy Hook
+        run: |
+          RESPONSE=$(curl -s -w "\n%{http_code}" -X POST "https://api.vercel.com/v1/integrations/deploy/prj_CCuVSz4ZZ4zPnmYRfh8j220fVsZ2/p8koOJy6eS")
+          echo "$RESPONSE"
+          HTTP_CODE=$(echo "$RESPONSE" | tail -n1)
+          if [ "$HTTP_CODE" = "200" ]; then
+            echo "✅ Vercel deploy triggered successfully"
+          else
+            echo "❌ Hook returned HTTP $HTTP_CODE"
+            exit 1
+          fi
