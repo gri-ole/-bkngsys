@@ -91,9 +91,9 @@ export default function AdminLayout({
   }
 
   return (
-    <>
+    <div className="admin-wrapper">
       {children}
       <AdminFooter />
-    </>
+    </div>
   );
 }

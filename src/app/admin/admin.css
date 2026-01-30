@@ -303,6 +303,51 @@
    ======================================== */
 
 @media (max-width: 768px) {
+  /* Обёртка админки — контейнер и карточки */
+  .admin-wrapper .container {
+    padding: 16px 12px;
+    padding-bottom: 80px; /* место под футер */
+  }
+
+  .admin-wrapper .card {
+    padding: 16px 14px;
+    border-radius: 12px;
+  }
+
+  .admin-wrapper h1 {
+    font-size: 22px !important;
+    margin-bottom: 18px !important;
+  }
+
+  .admin-wrapper h2 {
+    font-size: 18px !important;
+  }
+
+  /* Кнопки в админке — крупные, на всю ширину */
+  .admin-wrapper button {
+    min-height: 52px;
+    padding: 14px 20px;
+    font-size: 16px;
+  }
+
+  .admin-wrapper .card button,
+  .admin-wrapper button[type="submit"] {
+    width: 100%;
+  }
+
+  /* Формы в админке */
+  .admin-wrapper .form-input,
+  .admin-wrapper .form-select,
+  .admin-wrapper .form-textarea {
+    min-height: 48px;
+    font-size: 16px;
+    padding: 14px 16px;
+  }
+
+  .admin-wrapper .form-group {
+    margin-bottom: 20px;
+  }
+
   /* Контейнер */
   .admin-container {
     padding: 16px 12px;
@@ -312,6 +357,10 @@
   h1 {
     font-size: 24px !important;
     margin-bottom: 20px !important;
+  }
+
+  h2 {
+    font-size: 20px !important;
   }
 
   h2 {
@@ -412,6 +461,25 @@
    ======================================== */
 
 @media (max-width: 480px) {
+  /* Обёртка админки */
+  .admin-wrapper .container {
+    padding: 12px 10px;
+    padding-bottom: 80px;
+  }
+
+  .admin-wrapper .card {
+    padding: 14px 12px;
+  }
+
+  .admin-wrapper h1 {
+    font-size: 20px !important;
+    margin-bottom: 14px !important;
+  }
+
+  .admin-wrapper h2 {
+    font-size: 17px !important;
+  }
+
   /* Еще более компактный вид */
   .admin-container {
     padding: 12px 8px;

@@ -797,7 +797,29 @@ export default function BookingPage() {
           }
 
           .form-box {
-            padding: 30px 24px;
+            padding: 28px 20px;
+          }
+
+          .form-box .form-input,
+          .form-box .form-select,
+          .form-box .form-textarea {
+            min-height: 48px;
+            font-size: 16px;
+            padding: 14px 16px;
+          }
+
+          .form-box button[type="submit"] {
+            min-height: 52px;
+            width: 100%;
+            font-size: 17px;
+          }
+
+          .booking-section {
+            padding: 50px 0;
+          }
+
+          .container {
+            padding: 0 16px;
           }
 
           .success-box {
@@ -957,19 +979,52 @@ export default function BookingPage() {
 
         @media (max-width: 480px) {
           .page-title {
-            font-size: 2rem;
+            font-size: 1.85rem;
             margin-bottom: 16px;
+            letter-spacing: 1px;
           }
 
           .section-title {
-            font-size: 1.8rem;
+            font-size: 1.6rem;
             margin-bottom: 20px;
           }
 
           .title-underline {
             width: 80px;
             height: 3px;
-            margin-bottom: 40px;
+            margin-bottom: 32px;
+          }
+
+          .form-box {
+            padding: 20px 16px;
+            border-radius: 12px;
+          }
+
+          .form-box .form-input,
+          .form-box .form-select,
+          .form-box .form-textarea {
+            min-height: 48px;
+            font-size: 16px;
+            padding: 14px 16px;
+          }
+
+          .form-box button[type="submit"] {
+            min-height: 54px;
+            width: 100%;
+            font-size: 17px;
+            padding: 16px;
+          }
+
+          .booking-section {
+            padding: 36px 0;
+          }
+
+          .booking-content {
+            padding: 0 4px;
+          }
+
+          .container {
+            padding: 0 12px;
           }
 
           .success-icon {
